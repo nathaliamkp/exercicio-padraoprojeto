@@ -6,9 +6,13 @@ import java.util.List;
 public class ConnectionPool {
 
     private static ConnectionPool singleton = new ConnectionPool();
-    private static int POOL_SIZE = 2;
+    public static int POOL_SIZE = 2;
 
     private List<Connection> connectionsPool;
+
+    public static ConnectionPool getInstance() {
+        return singleton;
+    }
 
     private ConnectionPool() {
         System.out.println("Creating Connection Pool");
